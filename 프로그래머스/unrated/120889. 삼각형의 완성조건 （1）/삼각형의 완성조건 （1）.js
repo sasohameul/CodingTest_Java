@@ -1,20 +1,6 @@
 function solution(sides) {
-     var answer = 0;
+    
+    const [max , a, b] = sides.sort((a,b) => b - a);
 
-  var max = 0;
-  let cnt = 0;
-  for(var i = 0; i < sides.length; i++){
-
-    if(sides[i] > max) {
-      cnt = i;
-      max = sides[i];
-    }
-  }
-
-  for(let i = 0; i < sides.length; i++){
-
-    if(i != cnt) answer += sides[i];
-  }
-
-  return answer > max ? 1 : 2;
+  return max < a + b ? 1 : 2;
 }
