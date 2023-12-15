@@ -1,16 +1,9 @@
 function solution(n) {
-   var answer = 0;
-
-  for(var i = 1; i <= 1000; i++){
-
-    if(i*i == n) {
-
-      answer = 1;
-      break;
+    
+    for(let i = 1; i*i <= n; i++){
+        
+        if(i*i == n ) return 1;
+        
     }
-    answer = 2;
-
-  }
-
-  return answer;
+    return 2;
 }
