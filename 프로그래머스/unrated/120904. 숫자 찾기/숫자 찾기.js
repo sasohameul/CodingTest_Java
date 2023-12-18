@@ -1,7 +1,8 @@
 const solution = (num, k) => {
 
-        const result = num.toString().indexOf(k)+1;
+    const answer = num.toString()
+                      .split('')
+                      .findIndex(elem => elem == k)+1;
 
-return result == 0 ? -1 : result;
-
+    return answer > 0 ? answer : -1;
 }
