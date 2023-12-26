@@ -8,11 +8,7 @@ const solution = (letter) => {
         '-.--':'y','--..':'z'
     }
 
-   const decipher = letter.split(' ').map((str,idx,arr) => {
-
-            return morse[str];
-
-   }).join('');
+   const decipher = letter.split(' ').map((str) => morse[str]).join('');
    
     return decipher;
 }
