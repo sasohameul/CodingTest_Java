@@ -1,13 +1,9 @@
 const solution = (id_pw, db) => {
 
-    const result = db.find(data => data[0]===id_pw[0] && data[1]===id_pw[1]);
+    const [id,pw] = id_pw;
 
-    if(result !== undefined) return 'login';
+    const map = new Map(db);
 
-    else 
-       if( db.some(data => data[0] === id_pw[0]) ) return 'wrong pw';
-    
-
-    return 'fail';
+    return map.has(id) ? (map.get(id) === pw ? 'login' : 'wrong pw') : 'fail';
 
 }
