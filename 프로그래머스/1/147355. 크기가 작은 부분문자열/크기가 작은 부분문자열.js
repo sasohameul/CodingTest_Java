@@ -1,13 +1,11 @@
 const solution = (t, p) =>{
-    let answer = [];
+     let answer = 0;
     const len = t.length-p.length+1;
 
       for(let j = 0; j < len; j++){
         const element = t.slice(j, j + p.length);
-        answer.push(element);
+        if(element <= p) answer++;
       }
 
-      const result = answer.filter((el)=>el <= p);
-
-    return result.length;
+    return answer;
 }
