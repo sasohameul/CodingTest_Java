@@ -1,18 +1,9 @@
 const solution = (s) => {
+   const answer = [...s].map((char, idx) => {
 
-   const answer = s.split('').map((spell,idx,arr) => {
+      const index = s.slice(0,idx).lastIndexOf(char);
 
-    if(idx === 0) return -1;
-    else {
-      for(let i = idx-1; i >= 0; i-- ){
-        if(arr[i] === spell){
-          return idx-i;
-        } 
-      }
-      return -1;
-    }
-
-  });
-
+      return index < 0 ? index : idx - index;
+ });
     return answer;
 }
